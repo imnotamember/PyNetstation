@@ -9,7 +9,7 @@ Out of timeliness sake, I'll just include the major lines of code from "example_
 
 ##Highlights
 
-####Importing:
+#### Importing:
 ```
 # # This will import the debugging version of the PyNetStation module,
 # #  which will not actually attempt a connection but will check to make sure
@@ -20,7 +20,7 @@ import egi.fake as egi  # FOR TESTING WITHOUT CONNECTION TO NETSTATION COMPUTER
 # import egi.simple as egi # FOR RUNNING CONNECTED TO NETSTATION COMPUTER -- USE THIS IN A REAL EXPERIMENT
 ```
 
-####Timing Object:
+#### Timing Object:
 ```
 # # Create a proper timing object to reference. To retrieve the time you want later,
 # #  call this method using ms_localtime(), it returns the time in a millisecond format
@@ -30,20 +30,20 @@ import egi.fake as egi  # FOR TESTING WITHOUT CONNECTION TO NETSTATION COMPUTER
 # ms_localtime = egi.ms_localtime
 ```
 
-####NetStation Object:
+#### NetStation Object:
 ```
 # # Create the NetStation event-sending object. After this you can call
 # #  the methods via the object instance, in this case 'ns'.
 ns = egi.Netstation()
 ```
 
-####Establishing a connection via ethernet:
+#### Establishing a connection via ethernet:
 ```
 # # The next line is for connecting the actual, single-threaded module version to the computer.
 ns.connect('11.0.0.42', 55513)  # sample address and port -- change according to your network settings
 ```
 
-####Linking the experiment to the NetStation session:
+#### Linking the experiment to the NetStation session:
 ```
 # # This sends some initialization info to NetStation for recording events.
 ns.BeginSession()
@@ -51,7 +51,7 @@ ns.BeginSession()
 ns.sync()
 ```
 
-####Start Recording:
+#### Start Recording:
 ```
 # # This starts the recording in NetStation acquisition. Equivalent to pressing the Record button.
 # # If at some point you pause the experiment using the "StopRecording()" method,
@@ -59,14 +59,14 @@ ns.sync()
 ns.StartRecording()
 ```
 
-####Synchronizing clocks at the start of each trial:
+#### Synchronizing clocks at the start of each trial:
 ```
 # # This re-aligns the clocks between the stim computer and the NetStation computer.
 # # Best to put at the start of each trial for maximal timing accuracy.
 ns.sync()
 ```
 
-####Sending events:
+#### Sending events:
 ```
 # # This line takes a variable amount of arguments, but I find it best practice to define
 # #  each variable and value so as to avoid unexpected results in the events.
@@ -116,14 +116,14 @@ Note B: it is *strongly* recommended to send as less data as possible .
 """
 ```
 
-####Pause Recording:
+#### Pause Recording:
 ```
 # # This method is misleading, as it merely pauses the recording in NetStation. Equivalent to the pause button.
 # # It is not actually stopping the recording session. That is done by the 'EndSession()' method.
 ns.StopRecording()
 ```
 
-####End Recording Session:
+#### End Recording Session:
 ```
 # # I don't typically use this, as it is closes the current "Session" in NetStation.
 # # I find it easier to just pause the recording using "StopRecording()" and then
@@ -131,7 +131,7 @@ ns.StopRecording()
 # ns.EndSession()
 ```
 
-####Closing the connection via ethernet:
+#### Closing the connection via ethernet:
 ```
 # # This line ends the connection via the ns object, and should then be destroying the object itself.
 # # It is good practice to use so as not to waste memory or leave TCP/IP links open, which could lead to being
