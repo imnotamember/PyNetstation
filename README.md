@@ -7,7 +7,7 @@ The quick way to test this out is by running the "example_psychopy.py" script wi
 
 Out of timeliness sake, I'll just include the major lines of code from "example_psychopy.py" that relate to the module in particular. If you want to see how it fits together with a PsychoPy experiment, read the full script.
 
-##Highlights
+## Highlights
 
 #### Importing:
 ```
