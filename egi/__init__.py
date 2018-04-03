@@ -1,4 +1,6 @@
-"""
+
+
+"""     
     Python interface to interact with EGI Netstation     
 
     simple.py is a wrapper for a single-threaded version,     
@@ -6,5 +8,7 @@
     may be there would also be a "multiprocessed" one.     
 
     Some examples will either follow or live in some separate 
-    test files here .
-"""
+    test files here .     
+
+"""     
+
